@@ -136,7 +136,5 @@ window.onload = function() {
   var inputField = document.getElementById("input-hiden"); // замените "myInput" на ID вашего поля ввода
   if (inputField) {
     inputField.focus(); // фокусируемся на поле ввода
-    inputField.setAttribute('readonly', false); // убираем атрибут readonly, чтобы клавиатура могла появиться
-    inputField.setAttribute('disabled', false); // убираем атрибут disabled, чтобы поле ввода стало активным
   }
 };
