@@ -67,8 +67,7 @@ function onGoodKey(event) {
       if (`Key${word[i].toUpperCase()}` === event.code)
         hiddenLatter.splice(i, 1, word[i])
     }
-    score += 15
-    scoreInfo.textContent = `Good +15`
+    scoreInfo.textContent = `Good`
     scoreInfo.style.color = `rgb(${(Math.floor(Math.random() * 164))},${155 + (Math.floor(Math.random() * 100))},${(Math.floor(Math.random() * 111))})`
     answer.textContent = hiddenLatter.join('');
   } else {
@@ -93,7 +92,7 @@ function onGoodKey(event) {
 
   if (word.join('') === answer.textContent) {
     score += 40 * word.length
-    scoreInfo.textContent = `Perfect +${10 * word.length}`
+    scoreInfo.textContent = `Perfect +${30 * word.length}`
     scoreInfo.style.color = `rgb(${(Math.floor(Math.random() * 164))},${155 + (Math.floor(Math.random() * 100))},0))})`
     console.log(score);
     window.removeEventListener('keydown', onGoodKey)
