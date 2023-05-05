@@ -37,7 +37,7 @@ li {
 
 .overlay-image{
   position: absolute;
-  top: 42px;
+  top: 44px;
   left: 63px;
   transition: cubic-bezier(0.075, 0.82, 0.165, 100);
 }

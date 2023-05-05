@@ -107,7 +107,7 @@ function onGoodKey(event) {
 
 function restart() {
   window.addEventListener('keydown', onGoodKey)
-      defaultPosition = 42
+      defaultPosition = 44
       overlayImg.style.top = `${defaultPosition}px`
       word = ''
       reservedSpace = ""
