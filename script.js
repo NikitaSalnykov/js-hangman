@@ -130,11 +130,3 @@ function onKeyY(event) {
 } 
 
 
-
-// для открытия клавиатуры на мобильном без инпута
-window.onload = function() {
-  var inputField = document.getElementById("input-hiden"); // замените "myInput" на ID вашего поля ввода
-  if (inputField) {
-    inputField.focus(); // фокусируемся на поле ввода
-  }
-};
