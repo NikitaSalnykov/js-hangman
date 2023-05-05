@@ -58,6 +58,9 @@ li {
 
 #input-hiden {
   position: absolute;
-  z-index: -5;
+  top: 0;
+  color: black;
+  background-color: transparent;
+  border: none;
 }
 
