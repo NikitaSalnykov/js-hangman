@@ -128,3 +128,11 @@ function onKeyY(event) {
     scoreInfo.textContent = ''
   }
 } 
+
+
+
+// для открытия клавиатуры на мобильном без инпута
+window.onload = function() {
+  var body = document.getElementsByTagName("body")[0];
+  body.addEventListener("touchstart", function() {}, false);
+};
