@@ -4,13 +4,20 @@ const answer = hangmanGame.querySelector('.answer-text')
 const scoreLine = hangmanGame.querySelector('.text-score')
 const scoreInfo = hangmanGame.querySelector('.text-score-info')
 
-const words = ['nikita', 'nikita', 'ni', 'nik']
+const words = ["TheFool", "TheMagician", "TheEmpress", "TheEmperor", "TheLovers", "TheChariot", "Strength", "TheHermit", "Justice", "Death", "TheDevil", "TheTower", "TheStar", "TheMoon", "TheSun", "Judgment", "TheWorld", "AceofWands", "TwoofWands", "ThreeofWands", "FourofWands", "FiveofWands", "SixofWands", "SevenofWands", "EightofWands", "NineofWands", "TenofWands", "PageofWands", "KnightofWands", "QueenofWands", "KingofWands", "AceofCups", "TwoofCups", "ThreeofCups", "FourofCups", "FiveofCups", "SixofCups", "SevenofCups", "EightofCups", "NineofCups", "TenofCups", "PageofCups", "KnightofCups", "QueenofCups", "KingofCups", "AceofSwords", "TwoofSwords", "ThreeofSwords", "FourofSwords", "FiveofSwords", "SixofSwords", "SevenofSwords", "EightofSwords", "NineofSwords", "TenofSwords", "PageofSwords", "KnightofSwords", "QueenofSwords", "KingofSwords", "AceofPentacles", "TwoofPentacles", "ThreeofPentacles", "FourofPentacles", "FiveofPentacles", "SixofPentacles", "SevenofPentacles", "EightofPentacles", "NineofPentacles", "TenofPentacles", "PageofPentacles", "KnightofPentacles", "QueenofPentacles", "KingofPentacles"]
 let word = ''
 let score = 0
 
 function randomWord(words) {
   word = words[Math.floor(Math.random() * words.length)].split('');
-  return word
+
+  if (word.length > 10) {
+    answer.style.letterSpacing = '5px';
+    answer.style.fontSize = '25px';
+  } else {
+    answer.style.letterSpacing = '12px';
+    answer.style.fontSize = '30px';
+  }
 }
 
 randomWord(words)
@@ -49,6 +56,8 @@ let defaultPosition = 42
 // }
 
 
+
+
 function onGoodKey(event) {
   const latterKey = word.map((item) => `Key${item.toUpperCase()}`)
   let hiddenLatter = answer.textContent.split('')
@@ -68,7 +77,7 @@ function onGoodKey(event) {
       score -= 15
       scoreInfo.style.color = `rgb(${155+(Math.floor(Math.random() * 100))},${(Math.floor(Math.random() * 164))},0)`
       scoreInfo.textContent = 'Fail -15'
-      defaultPosition -= -20
+      defaultPosition += 33
       overlayImg.style.top = `${defaultPosition}px`
     } else {
       score -= 10 * word.length
@@ -116,7 +125,7 @@ function onKeyY(event) {
   if (event.code === 'KeyY') {
     restart();
     window.removeEventListener('keydown', onKeyY)
-    answer.style.letterSpacing = '12px';
+    // answer.style.letterSpacing = '12px';
     scoreInfo.textContent = ''
   }
 } 
